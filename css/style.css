@@ -409,9 +409,7 @@ form.sign-in-form {
   padding-left: 30px;
 }
 
-.radio input[type="radio"]{
-  display:none;
-}
+
 
 .radio span{
   height: 20px;
@@ -420,8 +418,8 @@ form.sign-in-form {
   border: 3px solid #1DA6F7;
   display:block; 
   position:absolute;
-  left: 0;
-  top: 2px;
+  left: 26px; 
+  top: 1px;
 }
 
 .radio span::after{
