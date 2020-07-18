@@ -3,10 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/64d58efce2.js"
-      crossorigin="anonymous"
-    ></script>
     <link rel="stylesheet" href="css/style.css" />
     <title>Login</title>
   </head>
@@ -18,7 +14,7 @@
           <form action="register_submit.php" class="sign-in-form" enctype="multipart/form-data" method="POST">
             <h2 class="title">Sign in</h2>
             <div class="input-field">
-              <i class="fas fa-user"></i>
+              <i class="fas fa-envelope"></i>
               <input type="text" placeholder="Email" name="email" required/>
             </div>
             <div class="input-field">
@@ -26,18 +22,21 @@
               <input type="password" placeholder="Password" name="password" required/>
             </div>
             <div class="radio-group">
-                  <label class="radio">
-              <input type="radio" name="type" value="student" required>
-              student
-              <span></span>
-                  </label>
-            <label class="radio">
-              <input type="radio" name="type" value="Teacher">
-              Teacher
-              <span></span>
-                  </label>
-              </div>
+                <label class="radio">
+					<input type="radio" name="type" value="student" required>
+					student
+					<span></span>
+				</label>
+            	<label class="radio">
+					<input type="radio" name="type" value="Teacher">
+					Teacher
+					<span></span>
+            	</label>
+			</div>
             <input type="submit" value="Login" class="btn solid" />
+			<div class="forgotten-account">
+			<a href="forget_password.html" style="text-decoration: none"><span class="forgotten-account-style">forgot password?</span></a>
+			</div>
             <p class="social-text">Or Sign in with</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -45,6 +44,7 @@
               </a>
             </div>
           </form>
+
           <!--Sign up-->
           <form action="register_submit.php" class="sign-up-form" enctype="multipart/form-data" method="POST">
             <h2 class="title">Sign up</h2>
@@ -120,6 +120,10 @@
       </div>
     </div>
 
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="js/app.js"></script>
   </body>
 </html>
