@@ -11,7 +11,8 @@
       <!--Sign in-->
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="register_submit.php" class="sign-in-form" enctype="multipart/form-data" method="POST">
+          <form action="register_submit.php" 
+          class="sign-in-form" enctype="multipart/form-data" method="POST">
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
@@ -28,14 +29,16 @@
 					<span></span>
 				</label>
             	<label class="radio">
-					<input type="radio" name="type" value="Teacher">
+					<input type="radio" name="type" value="teacher">
 					Teacher
 					<span></span>
             	</label>
 			</div>
             <input type="submit" value="Login" class="btn solid" />
 			<div class="forgotten-account">
-			<a href="forget_password.html" style="text-decoration: none"><span class="forgotten-account-style">forgot password?</span></a>
+        <a href="forget_password.html" style="text-decoration: none">
+          <span class="forgotten-account-style">forgot password?</span>
+        </a>
 			</div>
             <p class="social-text">Or Sign in with</p>
             <div class="social-media">
@@ -59,15 +62,21 @@
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" name="signemail" required/>
+              <input type="email" placeholder="Email" name="signemail" id="signemail" required/>
+            </div>
+            <div class="user_exist" style="color:red">
+              user exists already on this email
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" name="signpassword" required/>
+              <input type="password" placeholder="Password" id="password" name="signpassword" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Confirm Password" required />
+              <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" required />
+            </div>
+            <div class="confirmpassword_dialouge" style="color:red">
+              Password and Confirm Password must be same !!
             </div>
             <div class="radio-group">
             <label class="radio">
@@ -81,7 +90,7 @@
               <span></span>
             </label>
             </div>
-            <input type="submit" class="btn" value="Sign up" />
+            <input type="submit" class="btn" id="submit-btn" value="Sign up" />
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -125,5 +134,13 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+    integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" 
+    crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="js/unique_mail.js"></script>
   </body>
 </html>
