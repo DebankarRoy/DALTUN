@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Student Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+            <!--navbar-->
+<nav class="navbar navbar-expand-md bg-primary navbar-dark">
+  <a class="navbar-brand" href="#">DALTUN</a><!--navbar-->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#profile">
+    Profile
+  </button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#scorecard">
+    Scorecard
+  </button>
+      </li>    
+    </ul>
+  </div>  
+</nav>
+<br>
+      <!--upcoming tests and enrollment-->
+<section class="row">
+    <div class="card-columns m-3 p-4">
+      <div class="card">
+          
+      <div class="card-body m-3">
+          <h4 class="card-title">PYTHON</h4>
+          <p class="card-text">Date:<br>Time:</p>
+          <a href="#" class="btn btn-primary">Enroll</a>
+      </div>
+      </div>
+      <div class="card ">
+          
+      <div class="card-body m-3">
+          <h4 class="card-title">JAVA</h4>
+          <p class="card-text">Date:<br>Time:</p>
+          <a href="#" class="btn btn-primary">Enroll</a>
+      </div>
+      </div>
+      <div class="card ">
+          
+      <div class="card-body m-3">
+          <h4 class="card-title">Image Processing</h4>
+          <p class="card-text">Date:<br>Time:</p>
+          <a href="#" class="btn btn-primary">Enroll</a>
+      </div>
+      </div>
+      <div class="card ">
+          
+      <div class="card-body m-3">
+          <h4 class="card-title">AI</h4>
+          <p class="card-text">Date:<br>Time:</p>
+          <a href="#" class="btn btn-primary">Enroll</a>
+      </div>
+      </div>
+      <div class="card ">
+          
+      <div class="card-body m-3">
+          <h4 class="card-title">DBMS</h4>
+          <p class="card-text">Date:<br>Time:</p>
+          <a href="#" class="btn btn-primary">Enroll</a>
+      </div>
+      </div>
+    </div>
+</section>
+
+  <!-- PROFILE -->
+  <div class="modal fade" id="profile">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Edit your Profile</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+   <!-- SCORECARD -->
+  <div class="modal fade" id="scorecard">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Previous Scorecards</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+ 
+  
+</body>
+</html>
