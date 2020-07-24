@@ -1,0 +1,146 @@
+*{
+    box-sizing : border-box;
+    font-family: 'Open Sans';
+    
+  }
+  html, body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  
+  .row::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .triangle-left {
+    background-color: #61bfbf;
+    opacity: 0.07;
+    width: 200px;
+    height: 350px;
+    -ms-transform: rotate(30deg);
+    transform: rotate(30deg);
+    position: absolute;
+    left: -115px;
+    top: 110px;
+    z-index: 1;
+  }
+  
+  .triangle-right {
+    z-index: 1;
+    background-color: white;
+    opacity: 0.35;
+    width: 555px;
+    height: 400px;
+    -ms-transform: rotate(67deg);
+    transform: rotate(67deg);
+    position: absolute;
+    right: -220px;
+    top: 210px;
+    
+  }
+  
+  .triangle-right-up {
+    background-color: white;
+     opacity: 0.35; 
+    width: 365px;
+    height: 180px;
+    -ms-transform: rotate(67deg);
+    transform: rotate(25deg);
+    position: absolute;
+    right: -87px;
+    top: 140px;
+    z-index: 1;
+  }
+  .triangle-left-up {
+    background-color: #61bfbf;
+    opacity: 0.1;
+    width: 170px;
+    height: 480px;
+    -ms-transform: rotate(20deg);
+    transform: rotate(140deg);
+    position: absolute;
+    left: 15px;
+    top: 145px;
+    z-index: 1;
+  }
+  
+  @media (max-width: 600px){
+   .triangle-left,.triangle-right,.triangle-right-up,.triangle-left-up{
+    display: none;
+   }
+  }
+  
+  .body-part{
+    background-color: #E0F2F2;
+  }
+  
+  .box{
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+    width: 700px;
+    background-color: white;
+    margin-left: 24%;
+   // border: 1px solid black;
+    height: 240px;
+    border-radius: 5px;
+  }
+  
+  .padding-top{
+    width:100%;
+    height: 20vh;
+    //border:1px solid black;
+  }
+  
+  .box-child{
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+    height: 70%;
+    width:40vh;
+   // border:1px solid black;
+    display: inline-block;
+    margin:6%;
+    border-radius: 5px;
+  }
+  
+  @media (max-width: 600px){
+    .padding-top{
+      height: 5vh;
+      width:auto;
+    }
+    .box {
+      width: 240px;
+      margin-left: 18%;
+      height: 600px;
+      display: block;
+      justify-content: center;
+      text-align: center;
+    }
+    .box-child{
+      height: 25%;
+      width:60%;
+      display: inline-block;
+    }
+  }
+  
+  .logo-for-home{
+    height: 110px;
+    width: 110px;
+    padding:5px;
+  }
+  .logo-title{
+    justify-content:center;
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  @media (max-width: 600px){
+    .logo-for-home{
+      height: 100px;
+      width: 100px;
+    }
+    .logo-title{
+      justify-content:center;
+      text-align: center;
+      font-size: 18px;
+    }
+  }
+  
