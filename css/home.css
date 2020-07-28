@@ -109,7 +109,7 @@
     .box {
       width: 240px;
       margin-left: 18%;
-      height: 600px;
+      height: auto;
       display: block;
       justify-content: center;
       text-align: center;
@@ -144,3 +144,38 @@
     }
   }
   
+  .enrollHeader{
+    background-color: #61bfbf;
+    position: relative;
+    text-align: center;
+    display:inline-block;  
+  }
+
+  .close{
+    position: absolute;
+    top:5px;
+    right: 5px;;
+  }
+
+  .modal-body{
+    display: flex;
+  }
+
+  #code_for_exam{
+    width:45vh;
+    border:none;
+    outline: none;
+    border-bottom:1px solid black;
+  }
+
+  @media (max-width: 600px){
+    #code_for_exam{
+      width:30vh;
+    }
+  }
+
+.center{
+  justify-content: center;
+    text-align: center;
+}
+
