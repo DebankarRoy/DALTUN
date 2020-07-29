@@ -1,10 +1,21 @@
+<?php
+  session_start();
+  if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+  {
+    echo $_SESSION['loggedin'];
+    if($_SESSION['login_type'] =='student')
+      header("Location: student_home.php");
+    else
+    header("Location: teacher_home.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Login</title>
+    <title id="title">Login</title>
     <link rel = "icon" href ="img/login.png">
   </head>
   <body>
@@ -17,11 +28,11 @@
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="text" placeholder="Email" name="email" required/>
+              <input type="text" placeholder="Email" name="email" autocomplete="off" required />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" name="password" required/>
+              <input type="password" placeholder="Password" name="password" autocomplete="off" required/>
             </div>
             <div class="radio-group">
                 <label class="radio">
@@ -54,27 +65,27 @@
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" name="signname" required/>
+              <input type="text" placeholder="Username" name="signname" autocomplete="off" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-mobile"></i>
               <input type="text" placeholder="Phone no." name="signnumber" pattern="[0-9]{10}"
-               required/>
+              autocomplete="off" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" name="signemail" id="signemail" required/>
+              <input type="email" placeholder="Email" name="signemail" id="signemail" autocomplete="off" required/>
             </div>
             <div class="user_exist" style="color:red">
               user exists already on this email
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" id="password" name="signpassword" required/>
+              <input type="password" placeholder="Password" id="password" name="signpassword" autocomplete="off" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" required />
+              <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" autocomplete="off" required />
             </div>
             <div class="confirmpassword_dialouge" style="color:red">
               Password and Confirm Password must be same !!
@@ -86,7 +97,7 @@
               <span></span>
             </label>
             <label class="radio">
-              <input type="radio" name="signtype" value="Teacher">
+              <input type="radio" name="signtype" value="teacher">
               Teacher
               <span></span>
             </label>
@@ -145,3 +156,14 @@
     <script src="js/unique_mail.js"></script>
   </body>
 </html>
+
+<script>
+  $("#sign-up-btn").click(function() {
+    newPageTitle = 'Signup'; 
+    document.title = newPageTitle;
+  });
+  $("#sign-in-btn").click(function() {
+    newPageTitle = 'login'; 
+    document.title = newPageTitle;
+  });
+</script>
