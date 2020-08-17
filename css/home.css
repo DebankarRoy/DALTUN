@@ -80,7 +80,6 @@
     width: 700px;
     background-color: white;
     margin-left: 24%;
-   // border: 1px solid black;
     height: 240px;
     border-radius: 5px;
   }
@@ -88,17 +87,16 @@
   .padding-top{
     width:100%;
     height: 20vh;
-    //border:1px solid black;
   }
   
   .box-child{
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
     height: 70%;
     width:40vh;
-   // border:1px solid black;
     display: inline-block;
     margin:6%;
     border-radius: 5px;
+    cursor: pointer;
   }
   
   @media (max-width: 600px){

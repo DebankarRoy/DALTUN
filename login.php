@@ -14,9 +14,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/login.css" />
     <title id="title">Login</title>
     <link rel = "icon" href ="img/login.png">
+    <style>
+      @media (max-width: 570px){
+        .daltun_logo{
+          font-size:34px !important;
+          display: block;
+          top:0px;
+          left:-70px;
+          width:100%;
+        }
+        .content{
+          position:relative;
+          top:600px;
+          left:80px;
+          /*background-color: red;*/
+        }
+        .signin-signup {
+          top: 90%;
+        }
+        .mbl_view{
+          color: #444444;
+        }
+        .mbl_view_btn{
+          color: #444444;
+          border: 2px solid #444444 !important;
+          position: relative;
+          top: -600px;
+        }
+        .sign-up-form{
+          position: relative;
+          top: -40px;
+        }
+        .container.sign-up-mode:before {
+        bottom: 22%;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -48,7 +84,7 @@
 			</div>
             <input type="submit" value="Login" class="btn solid" />
 			<div class="forgotten-account">
-        <a href="forget_password.html" style="text-decoration: none">
+        <a href="forget_password.php" style="text-decoration: none">
           <span class="forgotten-account-style">forgot password?</span>
         </a>
 			</div>
@@ -116,27 +152,27 @@
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
-            <h3>New here ?</h3>
-            <p>
+            <h3 class="mbl_view">New here ?</h3>
+            <p class="mbl_view">
               Just Create a New Account!!
             </p>
-            <button class="btn transparent" id="sign-up-btn">
+            <button class="btn transparent mbl_view_btn" id="sign-up-btn">
               Sign up
             </button>
           </div>
-          <img src="img/log.svg" class="image" alt="" />
+          <div class="image daltun_logo">D A L T U N</div>
         </div>
         <div class="panel right-panel">
           <div class="content">
-            <h3>One of us ?</h3>
-            <p>
+            <h3 class="mbl_view">One of us ?</h3>
+            <p class="mbl_view">
               Just Sign in!!
             </p>
-            <button class="btn transparent" id="sign-in-btn">
+            <button class="btn transparent mbl_view_btn" id="sign-in-btn">
               Sign in
             </button>
           </div>
-          <img src="img/register.svg" class="image" alt="" />
+          <div class="image daltun_logo" /*style="top:-20px !important"*/>D A L T U N</div>
         </div>
       </div>
     </div>
@@ -145,7 +181,7 @@
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
-    <script src="js/app.js"></script>
+    <script src="js/login.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
     integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" 
     crossorigin="anonymous">
@@ -166,4 +202,34 @@
     newPageTitle = 'login'; 
     document.title = newPageTitle;
   });
+  if(window.matchMedia("(max-width: 700px)").matches)
+  {
+    console.log("window");
+  }
+  else
+    {
+      $("#sign-up-btn").click(function() {
+      $(".left-panel").hide();
+      $(".right-panel").show();
+      $("#sign-in-btn").show();
+      $("#sign-in-btn").css("top","-600px");
+      });
+    $("#sign-in-btn").click(function() {
+      $(".left-panel").show();
+      $(".right-panel").hide();
+      //$(".sign-up_btn").css("top","0px");
+      });
+    }
 </script>
+<?php
+if( $_SESSION['Password_Reset']==1)
+  { ?>
+    <script>
+    $( document ).ready(function() {
+      alert("check your email");
+    });
+    </script>
+  <?php 
+     $_SESSION['Password_Reset']=0;
+  }
+  ?>
