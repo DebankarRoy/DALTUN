@@ -22,7 +22,7 @@
         .daltun_logo{
           font-size:34px !important;
           display: block;
-          top:0px;
+          top:-20px;
           left:-70px;
           width:100%;
         }
@@ -43,6 +43,10 @@
           border: 2px solid #444444 !important;
           position: relative;
           top: -600px;
+        }
+        #sign-in-btn{
+          color: white;
+          border: 2px solid white !important;
         }
         .sign-up-form{
           position: relative;
@@ -156,7 +160,7 @@
             <p class="mbl_view">
               Just Create a New Account!!
             </p>
-            <button class="btn transparent mbl_view_btn" id="sign-up-btn">
+            <button class="btn transparent mbl_view_btn" id="sign-up-btn" style="position:static">
               Sign up
             </button>
           </div>
@@ -202,12 +206,9 @@
     newPageTitle = 'login'; 
     document.title = newPageTitle;
   });
-  if(window.matchMedia("(max-width: 700px)").matches)
+  if(window.matchMedia("(max-width: 570px)").matches)
   {
     console.log("window");
-  }
-  else
-    {
       $("#sign-up-btn").click(function() {
       $(".left-panel").hide();
       $(".right-panel").show();
@@ -217,12 +218,12 @@
     $("#sign-in-btn").click(function() {
       $(".left-panel").show();
       $(".right-panel").hide();
-      //$(".sign-up_btn").css("top","0px");
+      $(".sign-up_btn").css("top","0px");
       });
-    }
+  }
 </script>
 <?php
-if( $_SESSION['Password_Reset']==1)
+if(isset( $_SESSION['Password_Reset']) && $_SESSION['Password_Reset']==1)
   { ?>
     <script>
     $( document ).ready(function() {

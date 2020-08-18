@@ -27,6 +27,7 @@ if(isset($_POST['email']) && isset($_POST['password']) && isset($_POST['type']))
                 $_SESSION['name'] = $row['name'];
                 $_SESSION['first_name'] = $first_name[0];
                 $_SESSION['login_type'] = $row['type'];
+                $_SESSION['Password_Reset']=0;
                 if ($_SESSION['login_type'] =='teacher')
                     header("Location: teacher_home.php");
                 else if ($_SESSION['login_type'] =='student')
@@ -81,6 +82,7 @@ if(isset($_POST['email']) && isset($_POST['password']) && isset($_POST['type']))
             $_SESSION['name'] = $row['name'];
             $_SESSION['first_name'] = $first_name[0];
             $_SESSION['login_type'] = $row['type'];
+            $_SESSION['Password_Reset']=0;
             if($row['type'] =='teacher')
                 header("Location: teacher_home.php");
             elseif($row['type'] =='student')
