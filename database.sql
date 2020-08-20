@@ -17,11 +17,12 @@ create table users(
 
 create table enrolled_exams(
 	id int(200) NOT NULL AUTO_INCREMENT,
-    email VARCHAR(255) NOT NULL unique,
+    email VARCHAR(255) NOT NULL,
     enrolled_paper VARCHAR(255) NOT NULL,
     paper_code VARCHAR(255) NOT NULL,
+    start_date date,
     score VARCHAR(255) NOT NULL,
-    PRIMARY KEY (email)
+    PRIMARY KEY (id)
 );
 
 create table papers(
@@ -40,3 +41,11 @@ create table enrolled_students(
     PRIMARY KEY (paper_code)
 );
 
+INSERT INTO enrolled_exams (email,enrolled_paper,paper_code ,start_date,score)
+    VALUES('a@a','python','cs201','2018-06-15','pending');
+
+INSERT INTO enrolled_exams (email,enrolled_paper,paper_code ,start_date,score)
+    VALUES('a@a','java','cs301','2019-06-15','pending');
+
+INSERT INTO enrolled_exams (email,enrolled_paper,paper_code ,start_date,score)
+    VALUES('a@a','c','cs101','2017-06-15','pending');

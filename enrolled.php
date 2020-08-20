@@ -1,3 +1,13 @@
+<?php
+  session_start();
+  if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+  {
+    if($_SESSION['login_type'] =='teacher')
+      header("Location: teacher_home.php");
+  }
+  else
+    header("Location: login.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,8 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Home</title>
-  <link rel = "icon" href ="img/home.png">
+  <title>enrolled</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -16,20 +25,6 @@
 
 
   <link href="css/simple-sidebar.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/home.css">
-  <style>
-    @media (max-width: 600px){
-      .padding-top{
-        height: 15vh;
-      }
-    }
-    @media (min-width: 600px){
-      .box-child{
-        margin-left: 20vh;
-        margin-right: 19vh;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -63,51 +58,44 @@
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle profile_name mr-5"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="profile_name">Profile</span>
+              <span class="profile_name"><?php echo $_SESSION['first_name']; ?></span>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Home</a>
-                <a class="dropdown-item" href="#">Details</a>
-                <a class="dropdown-item" href="#">Logout</a>
+                <a class="dropdown-item" href="student_home.php">Home</a>
+                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="logout.php">Logout</a>
               </div>
             </li>
           </ul>
         </div>
       </nav>
 
-      <div class="container-fluid" style="background-image: linear-gradient(114deg, #F3F7F7, #CBEDED);height:100vh;">
-        <div class="triangle-left"></div>
-        <div class="triangle-right"></div>
-        <div class="triangle-left-up"></div>
-        <div class="triangle-right-up"></div>
-        <div class="padding-top"></div>
-        <div class="row box">
-          <div class="col box-child">
-            <div class="center"><img src="img/exam.png" class="logo-for-home" style="margin-left: 15px;"></div>
-            <div class="logo-title">Create Exam</div>
-          </div>
-          <div class="col box-child">
-            <div class="center"><img src="img/research.png" class="logo-for-home"></div>
-            <div class="logo-title">Exam Management</div>
-          </div>
-          
-        </div> 
+      <div class="container-fluid"
+       style="background-image: linear-gradient(114deg, #F3F7F7, #CBEDED);
+       height:100vh;">
+        <div class="card-columns mb-4 p-4" id="fetched_exams">
+        </div>                                    
       </div>
+
     </div>
     <!-- /#page-content-wrapper -->
 
   </div>
   <!-- /#wrapper -->
 
-
-  <!-- Menu Toggle Script -->
+<!-- Menu Toggle Script -->
   <script>
     $("#menu-toggle").click(function(e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
   </script>
-
+  <script src="js/exams_fetch.js"></script>
+  <script>
+    $('document').ready(function() {
+    readEnrolledExams();
+});
+  </script>
 </body>
 
 </html>

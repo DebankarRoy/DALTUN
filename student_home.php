@@ -8,7 +8,6 @@
     }
   else
     header("Location: login.php");
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,11 +84,11 @@
             <img src="img/registration.png" class="logo-for-home">
             <div class="logo-title">Enroll</div>
           </div>
-          <div class="col box-child">
+          <div class="col box-child" onclick="upcoming()">
             <img src="img/upcoming.png" class="logo-for-home">
             <div class="logo-title">Upcoming Exams</div>
           </div>
-          <div class="col box-child">
+          <div class="col box-child" onclick="results()">
             <img src="img/result.png" class="logo-for-home">
             <div class="logo-title">Results</div>
           </div>
@@ -136,7 +135,17 @@
       $("#wrapper").toggleClass("toggled");
     });
   </script>
-
+  <!-- onclick buttons -->
+  <script>
+    function upcoming()
+    {
+      window.location.href = "enrolled.php";
+    }
+    function results()
+    {
+      window.location.href = "results.php";
+    }
+  </script>
 </body>
 
 </html>

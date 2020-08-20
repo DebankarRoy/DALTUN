@@ -24,7 +24,7 @@ if(isset($_POST['email']) && isset($_POST['password']) && isset($_POST['type']))
                 session_start();
                 $_SESSION['loggedin']=true;    
                 $_SESSION['id'] = $row['id'];
-                $_SESSION['name'] = $row['name'];
+                $_SESSION['email'] = $row['email'];
                 $_SESSION['first_name'] = $first_name[0];
                 $_SESSION['login_type'] = $row['type'];
                 $_SESSION['Password_Reset']=0;
@@ -79,7 +79,7 @@ if(isset($_POST['email']) && isset($_POST['password']) && isset($_POST['type']))
             session_start();
             $_SESSION['loggedin']=true;    
             $_SESSION['id'] = $row['id'];
-            $_SESSION['name'] = $row['name'];
+            $_SESSION['email'] = $row['email'];
             $_SESSION['first_name'] = $first_name[0];
             $_SESSION['login_type'] = $row['type'];
             $_SESSION['Password_Reset']=0;
