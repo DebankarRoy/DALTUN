@@ -8,6 +8,16 @@ html, body {
   overflow-y: hidden;
 }
 
+.anirban{
+  float: right;
+}
+
+.ani{
+  border: 5px;
+  border-color: red;
+  text-align: right;
+}
+
 .row::after {
   content: "";
   display: block;
@@ -89,6 +99,11 @@ html, body {
   font-weight: 400;
 }
 
+.dropdown-toggle::after{
+  color:black; 
+  cursor:pointer ;
+}
+
 @media (max-width: 768px) {
   .navbar-collapse{
     display: none;
@@ -96,6 +111,12 @@ html, body {
 }
 
 
+@media (max-width: 768px) {
+  .anirban{
+    width: 10%;
+    float: right;
+  }
+}
 
 
 
