@@ -32,6 +32,17 @@ create table papers(
     PRIMARY KEY (paper_code)
 );
 
+create table ds(
+	id int(200) NOT NULL AUTO_INCREMENT,
+    question VARCHAR(300) NOT NULL,
+    option1 VARCHAR(255) NOT NULL,
+    option2 VARCHAR(255) NOT NULL,
+    option3 VARCHAR(255) NOT NULL,
+    option4 VARCHAR(255) NOT NULL,
+    answer VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
 create table enrolled_students(
 	id int(200) NOT NULL AUTO_INCREMENT,
     student_email VARCHAR(255) NOT NULL,
