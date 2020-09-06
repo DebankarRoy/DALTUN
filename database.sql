@@ -29,10 +29,19 @@ create table papers(
 	id int(200) NOT NULL AUTO_INCREMENT,
     paper VARCHAR(255) NOT NULL,
     paper_code VARCHAR(255) NOT NULL,
-    PRIMARY KEY (paper_code)
+    paper_date date,
+    fulltime VARCHAR(255) NOT NULL,
+    access_code VARCHAR(255) NOT NULL,
+    marks VARCHAR(255) NOT NULL,
+    negtaive VARCHAR(255) NOT NULL,
+    proctoring VARCHAR(255) NOT NULL,
+    instant_score VARCHAR(255) NOT NULL,
+    shuffling VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
 );
 
-create table ds(
+
+create table questions(
 	id int(200) NOT NULL AUTO_INCREMENT,
     question VARCHAR(300) NOT NULL,
     option1 VARCHAR(255) NOT NULL,
@@ -40,6 +49,8 @@ create table ds(
     option3 VARCHAR(255) NOT NULL,
     option4 VARCHAR(255) NOT NULL,
     answer VARCHAR(255) NOT NULL,
+    paper_code VARCHAR(255) NOT NULL,
+    paper_date date,
     PRIMARY KEY (id)
 );
 

@@ -27,3 +27,12 @@ img {
     float: right;
     cursor: pointer;
 }
+
+.inner {
+    display: inline-block;
+}
+
+.input-field {
+    display: inline-block;
+    width: max-content;
+}
