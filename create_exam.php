@@ -25,10 +25,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-
   <link href="css/simple-sidebar.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/datetheme.css" type="text/css">
+  <link rel="stylesheet" href="css/clockpicker.css" type="text/css">
   <style>
-    *{
+    html,body{
       overflow-y: visible !important;
       overflow-x: visible !important;
     }
@@ -105,11 +106,26 @@
                             <input type="text" class="form-control" name="marks" placeholder="100" required>
                           </div>
                           <div class="col p-3">
-                            Time(in mins)
-                            <input type="text" class="form-control" name="time" placeholder="180" required>
+                            Date
+                            <input type="text" id="date-input" class="form-control" name="examdate" placeholder="DD/MM/YYYY" required>
                           </div>
                         </div>
                         <div class="form-row">
+                          <div class="col p-3">
+                            Start Time
+                            <input type="text" id="start_time-input"  class="form-control" name="starttime" placeholder="09.30" value="" autocomplete="off" required>
+                          </div>
+                          <div class="col p-3">
+                            End Time
+                            <input type="text" id="end_time-input"  class="form-control" name="endtime" placeholder="12.30" value="" autocomplete="off" required>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-3 p-4 border">
+                        Advance  
+                    </div>
+                    <div class="col-9 p-4 border">
+                    <div class="form-row">
                           <div class="col p-3">
                             <h6>Allow instant Score view*</h6>
                             <div class="radio-group">
@@ -141,43 +157,38 @@
                             </div>
                           </div>
                         </div>
-                    </div>
-                    <div class="col-3 p-4 border">
-                        Advance  
-                    </div>
-                    <div class="col-9 p-4 border">
-                    <div class="form-row">
-                          <div class="col p-3">
-                          Online Proctoring* :
-                          <div class="radio-group">
-                                <label class="radio p-2">
-                                    <input type="radio" name="proctoring" value="Yes" required>
-                                    Yes
-                                    <span></span>
-                                </label>
-                                <label class="radio p-2">
-                                    <input type="radio" name="proctoring" value="No">
-                                    No
-                                    <span></span>
-                                </label>
+                      <div class="form-row">
+                            <div class="col p-3">
+                            Online Proctoring* :
+                            <div class="radio-group">
+                                  <label class="radio p-2">
+                                      <input type="radio" name="proctoring" value="Yes" required>
+                                      Yes
+                                      <span></span>
+                                  </label>
+                                  <label class="radio p-2">
+                                      <input type="radio" name="proctoring" value="No">
+                                      No
+                                      <span></span>
+                                  </label>
+                              </div>
                             </div>
-                          </div>
-                          <div class="col p-3">
-                          Question shuffling* :
-                          <div class="radio-group">
-                                <label class="radio p-2">
-                                    <input type="radio" name="shuffle" value="Yes" required>
-                                    Yes
-                                    <span></span>
-                                </label>
-                                <label class="radio p-2">
-                                    <input type="radio" name="shuffle" value="No">
-                                    No
-                                    <span></span>
-                                </label>
+                            <div class="col p-3">
+                            Question shuffling* :
+                            <div class="radio-group">
+                                  <label class="radio p-2">
+                                      <input type="radio" name="shuffle" value="Yes" required>
+                                      Yes
+                                      <span></span>
+                                  </label>
+                                  <label class="radio p-2">
+                                      <input type="radio" name="shuffle" value="No">
+                                      No
+                                      <span></span>
+                                  </label>
+                              </div>
                             </div>
-                          </div>
-                    </div>
+                      </div>
                     </div>
                 </div>
             </div>
@@ -193,6 +204,17 @@
   </div>
   <!-- /#wrapper -->
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="js/datedropper.pro.min.js"></script>
+    <script src="js/clockpicker.js"></script>
+    <script>
+        $('#date-input').dateDropper({
+      large:true,
+      theme:'datetheme'
+    });
+    $('#start_time-input').clockpicker();
+    $('#end_time-input').clockpicker();
+  </script>
 
   <!-- Menu Toggle Script -->
   <script>

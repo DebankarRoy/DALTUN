@@ -6,8 +6,9 @@
         $paper=mysqli_real_escape_string($conn,$_POST['paper']);
         $paper_code=mysqli_real_escape_string($conn,$_POST['code']);
         $marks=mysqli_real_escape_string($conn,$_POST['marks']);
-        $time=mysqli_real_escape_string($conn,$_POST['time']);
-        //$date=$_POST['date'];
+        $start_time=$_POST['starttime'];
+        $end_time=$_POST['endtime'];
+       // $date=$_POST['examdate'];
         $date="13/07/2020";
         $code="46515";
         $negative=$_POST['negative'];
@@ -17,10 +18,13 @@
         $_SESSION['paper_code']=$paper;
         $_SESSION['date']=$date;
 
-        $sql ="INSERT INTO papers (paper, paper_code, paper_date, fulltime, access_code, marks, negative, proctoring, instatnt_score, shuffling )
-        VALUES('$paper', '$paper_code','$date', '$time', '$code', '$marks','$negative', '$proctoring', '$instant_score', '$shuffle' )";
+        $sql ="INSERT INTO papers (paper, paper_code, paper_date, start_time, end_time, access_code, marks, negative, proctoring, instant_score, shuffling )
+        VALUES('$paper', '$paper_code','$date', '$start_time', '$end_time', '$code', '$marks','$negative', '$proctoring', '$instant_score', '$shuffle' )";
 
         $result = mysqli_query($conn,$sql);
+        if(!mysqli_query($conn,$sql)){
+            die("Error : ".$sql."<br>".mysqli_error($conn));
+        }
         
 
         
