@@ -17,7 +17,7 @@ function addQuestion() {
             url: "questions.php",
             data: frm.serialize(),
             success: function(data, status) {
-                alert("success" + data);
+                alert(data);
                 readRecordQuestion();
                 document.getElementById('add_question').reset();
             }
@@ -26,7 +26,7 @@ function addQuestion() {
 }
 
 function readRecordQuestion() {
-    //alert("asds");
+
     var readRecordQuestion = 'readRecordQuestion';
     $.ajax({
         type: "POST",
@@ -37,4 +37,20 @@ function readRecordQuestion() {
             $('.question_viewer').html(data);
         }
     });
+}
+
+function deleteQuestion(deleteid) {
+    var conf = confirm("Are you sure?");
+    console.log(deleteid);
+    if (conf == true) {
+        $.ajax({
+            url: "questions.php",
+            type: 'POST',
+            data: { deleteid: deleteid },
+            success: function(data, status) {
+                readRecordQuestion();
+                alert("Sucessfully Deleted");
+            }
+        });
+    }
 }

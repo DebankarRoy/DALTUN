@@ -28,6 +28,11 @@
   
   <link href="css/exams.css" rel="stylesheet">
   <link href="css/simple-sidebar.css" rel="stylesheet">
+  <style>
+    html,body{
+      overflow-y: visible;
+    }
+  </style>
 </head>
 
 <body>
@@ -73,8 +78,10 @@
         </div>
       </nav>
 
-      <div class="container-fluid" style="background-image: linear-gradient(114deg, #F3F7F7, #CBEDED);display:flex;">
-        <div class="add_ques p-3">
+      <div class="container-fluid" >
+        <div class="add_ques p-3 border" style="-webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.14);
+        -moz-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.14);
+        box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.14); border-radius: 10px 10px 10px 10px;">
           <h4>Add Question</h4>
           <form id = "add_question" action="" method="post">
             <textarea id="question" name="question" placeholder="Enter you question" rows="4" cols="60" style="resize: none;" required></textarea>

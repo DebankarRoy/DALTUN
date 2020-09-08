@@ -33,6 +33,13 @@
       overflow-y: visible !important;
       overflow-x: visible !important;
     }
+    input{
+      /*border: none !important;
+      border-bottom: 1px solid !important;
+      outline: none !important;
+      border-radius: 0px !important;
+      /*background-color: white !important;*/
+    }
   </style>
 </head>
 
@@ -80,30 +87,34 @@
       </nav>
 
         <div class="container-fluid">
-            <div class="row m-5 border">
-                <div class="row col-12 m-0 p-2 border-bottom">
-                    <h4>EXAM MANAGEMENT</h4>
+            <div class="row m-5 ">
+                <div class="row col-12 m-0 p-2 justify-content-center">
+                    <h3>EXAM CONFIGURATION</h3>
                 </div>
                 <div class="inner row col-12">
                     <div class="col-3 p-4 border">
-                        Basics  
+                      <h3>Basics</h3>  
                     </div>
                     <div class="col-9 p-4 border">
                       <form action="create_exam_submit.php" method="POST">
                         <div class="form-row">
                           <div class="col p-3 ">
                             Paper Name
-                            <input type="text" class="form-control" name="paper" placeholder="Ex: Data Structure" required>
+                            <input type="text" class="form-control" name="paper" placeholder="Ex: Data Structure" autocomplete="off" required>
                           </div>
                           <div class="col p-3">
                             Paper Code
-                            <input type="text" class="form-control" name="code" placeholder="Ex: CS 201" required>
+                            <input type="text" class="form-control" name="code" placeholder="Ex: CS 201" autocomplete="off" required>
                           </div>
                         </div>
                         <div class="form-row">
                           <div class="col p-3">
-                            Full Marks
-                            <input type="text" class="form-control" name="marks" placeholder="100" required>
+                            Each Question Marks
+                            <input type="text" class="form-control" name="eachmarks" placeholder="5" autocomplete="off" pattern="[0-9]{}" required>
+                          </div>
+                          <div class="col p-3">
+                            Negative Marks
+                            <input type="text" class="form-control" name="negativemarks" placeholder="2" autocomplete="off" pattern="[0-9]{}" required>
                           </div>
                           <div class="col p-3">
                             Date
@@ -113,16 +124,16 @@
                         <div class="form-row">
                           <div class="col p-3">
                             Start Time
-                            <input type="text" id="start_time-input"  class="form-control" name="starttime" placeholder="09.30" value="" autocomplete="off" required>
+                            <input readonly type="text" id="start_time-input"  class="form-control" name="starttime" placeholder="09.30" value="" autocomplete="off" onkeydown="return false;"  required>
                           </div>
                           <div class="col p-3">
                             End Time
-                            <input type="text" id="end_time-input"  class="form-control" name="endtime" placeholder="12.30" value="" autocomplete="off" required>
+                            <input readonly type="text" id="end_time-input"  class="form-control" name="endtime" placeholder="12.30" value="" autocomplete="off" onkeydown="return false;"  required>
                           </div>
                         </div>
                     </div>
                     <div class="col-3 p-4 border">
-                        Advance  
+                      <h3>Advance</h3>  
                     </div>
                     <div class="col-9 p-4 border">
                     <div class="form-row">
@@ -194,7 +205,7 @@
             </div>
             <div class="form-row ml-5 mb-2 justify-content-center">
               <input type="submit" class="btn btn-primary mr-2">
-              <button type="button" class="btn btn-danger ml-2">Danger</button>
+              <a href="Teacher_home.php"> <button type="button" class="btn btn-danger ml-2">Back</button></a>
             </div>
             </form>
         </div>
@@ -214,6 +225,12 @@
     });
     $('#start_time-input').clockpicker();
     $('#end_time-input').clockpicker();
+    /*$('#end_time-input').press(function() {
+
+    $('#end_time-input').attr('val', '');
+
+    });*/
+    
   </script>
 
   <!-- Menu Toggle Script -->
