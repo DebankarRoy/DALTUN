@@ -121,12 +121,36 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" onclick="enrollExam()">Enroll</button>
       </div>
     </div>
   </div>
 </div>
 
+    <script>
+      function enrollExam()
+      {
+        var codeenroll = $('#code_for_exam').val(); 
+        console.log(codeenroll);
+        $.ajax({
+            url: 'exam_enroll.php',
+            type: 'get',
+            data: {
+              'codeenroll' : codeenroll,
+            },
+            success: function(response){
+                if (response == 'correct' ) 
+                {
+                    alert("Successfully Enrolled");
+                }
+                else
+                {
+                    alert("Check your code");
+                }
+            }
+        });
+      }
+    </script>
 
   <!-- Menu Toggle Script -->
   <script>

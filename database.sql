@@ -20,7 +20,9 @@ create table enrolled_exams(
     email VARCHAR(255) NOT NULL,
     enrolled_paper VARCHAR(255) NOT NULL,
     paper_code VARCHAR(255) NOT NULL,
-    start_date date,
+    start_time time not null,
+    end_time time not null,
+    paper_date date not null,
     score VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 );
@@ -62,7 +64,7 @@ create table enrolled_students(
     student_name VARCHAR(255) NOT NULL,
     paper VARCHAR(255) NOT NULL,
     paper_code VARCHAR(255) NOT NULL,
-    PRIMARY KEY (paper_code)
+    PRIMARY KEY (id)
 );
 
 INSERT INTO enrolled_exams (email,enrolled_paper,paper_code ,start_date,score)

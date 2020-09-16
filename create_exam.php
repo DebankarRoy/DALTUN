@@ -40,6 +40,11 @@
       border-radius: 0px !important;
       /*background-color: white !important;*/
     }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
   </style>
 </head>
 
@@ -110,11 +115,11 @@
                         <div class="form-row">
                           <div class="col p-3">
                             Each Question Marks
-                            <input type="text" class="form-control" name="eachmarks" placeholder="5" autocomplete="off" pattern="[0-9]{}" required>
+                            <input type="number" class="form-control" name="eachmarks" placeholder="5" autocomplete="off" pattern="[0-9]{}" required>
                           </div>
                           <div class="col p-3">
                             Negative Marks
-                            <input type="text" class="form-control" name="negativemarks" placeholder="2" autocomplete="off" pattern="[0-9]{}" required>
+                            <input type="number" class="form-control" name="negativemarks" placeholder="2" autocomplete="off" pattern="[0-9]{}" required>
                           </div>
                           <div class="col p-3">
                             Date

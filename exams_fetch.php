@@ -9,13 +9,15 @@
             while ($row = mysqli_fetch_array($result)) {
                 $paper=$row['enrolled_paper'];
                 $paper_code=$row['paper_code'];
-                $date=$row['start_date'];
-                $date=date('d/m/Y',strtotime($date));
+                $date=$row['paper_date'];
+                $start_time=date("H:i",strtotime($row['start_time']));
+                $end_time=date("H:i",strtotime($row['end_time']));
+                //$date=date('d/m/Y',strtotime($date));
                  ?>
                 <div class="card">
                     <div class="card-body m-3">
                         <h4 class="card-title"><?php echo $paper."(".$paper_code.")"; ?></h4>
-                        <p class="card-text">Date:<?php echo $date;?><br>Time:</p>
+                        <p class="card-text">Date:<?php echo $date;?><br>Time:<?php echo $start_time;?>-<?php echo $end_time;?></p>
                         <a href="#" class="btn btn-primary">Start Exam</a>
                         <a href="#" class="btn btn-outline-danger">Un-register</a>
                     </div>
@@ -33,14 +35,16 @@
             while ($row = mysqli_fetch_array($result)) {
                 $paper=$row['enrolled_paper'];
                 $paper_code=$row['paper_code'];
-                $date=$row['start_date'];
-                $date=date('d/m/Y',strtotime($date));
+                $date=$row['paper_date'];
+                $start_time=date("H:i",strtotime($row['start_time']));
+                $end_time=date("H:i",strtotime($row['end_time']));
                 $score=$row['score'];
                  ?>
                 <div class="card">
                     <div class="card-body m-3">
                         <h4 class="card-title"><?php echo $paper."(".$paper_code.")"; ?></h4>
-                        <p class="card-text">Date:<?php echo $date;?><br>Time:</p>
+                        <p class="card-text">Date:<?php echo $date;?><br>Time:<?php echo $start_time;?>-<?php echo $end_time;?></p>
+                        <p class="card-text">FM:</p>
                         <p class="card-text">Score:<?php echo $score;?><br></p>
                     </div>
                 </div>
