@@ -22,9 +22,10 @@
         $proctoring=$_POST['proctoring'];
         $instant_score=$_POST['instantscore'];
         $shuffle=$_POST['shuffle'];
+        $email=$_SESSION['email'];
 
-        $sql ="INSERT INTO papers (paper, paper_code, paper_date, start_time, end_time, access_code, each_marks, negative, negative_marks, proctoring, instant_score, shuffling )
-        VALUES('$paper', '$paper_code','$start_date', '$start_time', '$end_time', '$code', '$marks','$negative', '$negative_marks', '$proctoring', '$instant_score', '$shuffle' )";
+        $sql ="INSERT INTO papers (teacher_email,paper, paper_code, paper_date, start_time, end_time, access_code, each_marks, negative, negative_marks, proctoring, instant_score, shuffling )
+        VALUES('$email', '$paper', '$paper_code','$start_date', '$start_time', '$end_time', '$code', '$marks','$negative', '$negative_marks', '$proctoring', '$instant_score', '$shuffle' )";
 
         //$result = mysqli_query($conn,$sql);
         if(!mysqli_query($conn,$sql)){

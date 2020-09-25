@@ -23,3 +23,17 @@ function readExamsResults(){
 			 }
 	})
 }
+
+function readEnrolledExamsTeacher(){
+	var readEnrolledExamsTeacher = 'readEnrolledExamsTeacher';
+	$.ajax({
+		url: 'exams_fetch.php',
+		type: 'POST',
+		data: { readEnrolledExamsTeacher:readEnrolledExamsTeacher },
+		success:function(data,status){
+	 			$('#fetched_exams').html(data);
+	 			
+			 }
+	})
+}
+

@@ -29,6 +29,7 @@ create table enrolled_exams(
 
 create table papers(
 	id int(200) NOT NULL AUTO_INCREMENT,
+    teacher_email VARCHAR(255) NOT NULL,
     paper VARCHAR(255) NOT NULL,
     paper_code VARCHAR(255) NOT NULL,
     paper_date date not null,
