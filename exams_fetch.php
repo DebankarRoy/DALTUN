@@ -69,6 +69,7 @@
                 $date=$row['paper_date'];
                 $start_time=date("H:i",strtotime($row['start_time']));
                 $end_time=date("H:i",strtotime($row['end_time']));
+                $access_code=$row['access_code'];
                 //$date=date('d/m/Y',strtotime($date));
                  ?>
                 <div class="card">
@@ -83,7 +84,7 @@
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="#">edit exam</a>
+                                <a class="dropdown-item" onclick='edit_exam("<?php echo $access_code;?>")'>edit exam</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">enrolled students</a>
                                 <div class="dropdown-divider"></div>

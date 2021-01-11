@@ -9,7 +9,7 @@
         $opt4=mysqli_real_escape_string($conn,$_POST['option4']);
         $qstn=mysqli_real_escape_string($conn,$_POST['question']);
         $ans=mysqli_real_escape_string($conn,$_POST['radiooption']);
-        $paper_code=$_SESSION['paper_code'];
+        $paper_code=$_SESSION['exam_code'];
         $paper_date=$_SESSION['date'];
         $sql = "INSERT INTO questions (question,option1,option2,option3,option4,answer,paper_code,paper_date)
             VALUES('$qstn','$opt1','$opt2','$opt3','$opt4','$ans', '$paper_code', '$paper_date')";
@@ -25,9 +25,8 @@
 
     if(isset($_POST['readRecordQuestion']))
     {
-        $paper_code=$_SESSION['paper_code'];
-        $paper_date=$_SESSION['date'];
-        $sql = "SELECT * FROM questions where paper_code='$paper_code' and paper_date='$paper_date'"; 
+        $access_code=$_SESSION['exam_code'];
+        $sql = "SELECT * FROM questions where paper_code='$access_code'"; 
         $result = mysqli_query($conn,$sql);
 
         if(mysqli_num_rows($result) >0){

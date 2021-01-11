@@ -32,8 +32,9 @@
             die("Error : ".$sql."<br>".mysqli_error($conn));
         }
         else{
-        $_SESSION['paper_code']=$paper;
+        $_SESSION['paper_code']=$paper_code;
         $_SESSION['date']=$start_date;
+        $_SESSION['exam_code']=$code;
         header("Location: add_questions.php");
         exit();
         }

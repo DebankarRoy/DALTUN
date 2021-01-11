@@ -101,6 +101,7 @@
     });
   </script>
   <script src="js/exams_fetch.js"></script>
+  <script src="js/exam_edit.js"></script>
   <script>
     $('document').ready(function() {
     readEnrolledExamsTeacher();
