@@ -86,9 +86,9 @@
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" onclick='edit_exam("<?php echo $access_code;?>")'>edit exam</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">enrolled students</a>
+                                <a class="dropdown-item" onclick='enrolled_students("<?php echo $access_code;?>")'>enrolled students</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">remove exam</a>
+                                <a class="dropdown-item" onclick='remove_exam("<?php echo $access_code;?>")'>remove exam</a>
                             </div>
                         </div>
                     </div>

@@ -12,17 +12,29 @@ function edit_exam(examcode)
 			 }
 	})
 }
-function remove_exam(examcode)
+function remove_exam(code)
 {
-    console.log("code="+code);
     $.ajax({
 		url: 'exam_edits.php',
 		type: 'POST',
-		data: { code:code },
+		data: { deletecode:code },
 		success:function(data,status){
-                //alert("session changed"+code);
-                console.log("session code changed");
-                window.location.href = "add_questions.php";
+				//console.log("deleting");
+				//alert(data);
+                readEnrolledExamsTeacher();
 			 }
+	})
+}
+
+function enrolled_students(examcode)
+{
+    $.ajax({
+		url: 'exam_edits.php',
+		type: 'POST',
+		data: { examcode:examcode },
+		success:function(data,status){
+			//alert("session code changed"+examcode);
+			window.location.href = "enrolled_students.php";
+			}
 	})
 }
